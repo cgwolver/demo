@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>capbar.qml</file>
+        <file>res/close.png</file>
+        <file>res/logo.png</file>
+        <file>res/maxi.png</file>
+        <file>res/mini.png</file>
+    </qresource>
+</RCC>
