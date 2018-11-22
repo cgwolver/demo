@@ -27,12 +27,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     buttonlist.cpp \
-    capbarevent.cpp
+    capbarevent.cpp \
+    itembutton.cpp \
+    buttontable.cpp
 
 HEADERS += \
         mainwindow.h \
     buttonlist.h \
-    capbarevent.h
+    capbarevent.h \
+    itembutton.h \
+    buttontable.h
 
 FORMS += \
         mainwindow.ui

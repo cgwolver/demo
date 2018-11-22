@@ -50,7 +50,13 @@
     <ClCompile Include="buttonlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="buttontable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="capbarevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="itembutton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -64,7 +70,13 @@
     <QtMoc Include="buttonlist.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="buttontable.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="capbarevent.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="itembutton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="mainwindow.h">
@@ -72,6 +84,10 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    
+    
+    
+    
     
     
     

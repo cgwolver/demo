@@ -14,8 +14,8 @@
     <ProjectGuid>{11584BEF-65D5-387F-8FDF-4AA959412FD5}</ProjectGuid>
     <RootNamespace>untitled20</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.14393.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -121,9 +121,9 @@
       <InitFuncName>appres</InitFuncName>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
       <QTDIR>$(QTDIR)</QTDIR>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <Compression>default</Compression>
       <InputFile>%(FullPath)</InputFile>
-      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
     </QtRcc>
     <QtUic>
       <QTDIR>$(QTDIR)</QTDIR>
@@ -174,11 +174,11 @@
     </ResourceCompile>
     <QtRcc>
       <QTDIR>$(QTDIR)</QTDIR>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <Compression>default</Compression>
+      <InitFuncName>appres</InitFuncName>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
       <InputFile>%(FullPath)</InputFile>
-      <InitFuncName>appres</InitFuncName>
-      <Compression>default</Compression>
-      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
     </QtRcc>
     <QtMoc>
       <QTDIR>$(QTDIR)</QTDIR>
@@ -200,14 +200,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="buttonlist.cpp" />
+    <ClCompile Include="buttontable.cpp" />
     <ClCompile Include="capbarevent.cpp" />
+    <ClCompile Include="itembutton.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="buttonlist.h">
     </QtMoc>
+    <QtMoc Include="buttontable.h">
+    </QtMoc>
     <QtMoc Include="capbarevent.h">
+    </QtMoc>
+    <QtMoc Include="itembutton.h">
     </QtMoc>
     <QtMoc Include="mainwindow.h">
     </QtMoc>

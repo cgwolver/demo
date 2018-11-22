@@ -3,148 +3,12 @@
 #include <qpainter.h>
 #include <QStylePainter>
 #include <QMenu>
-
-ListButton::ListButton(const QString &text, QWidget *parent)
-	: QPushButton(text, parent)
-{
-
-}
-
-void  ListButton::ListButton::enterEvent(QEvent *event) 
-{
-	QListWidget*list = dynamic_cast<QListWidget*>(parent());
-	lw->itemEntered(lvi);
-}
-
-void ListButton::leaveEvent(QEvent *event)
-{
-
-}
-
-void ListButton::paintEvent(QPaintEvent *e)
-{
-	if (isFlat()) {
-		
-		QPainter painter(this);	
-		//if (isChecked()|| isDown())
-		{
-			QRect rtg = geometry();
-			QRect rt;
-			QColor c(255, 0, 0,0);
-			painter.setPen(c);
-			painter.setBrush(Qt::BrushStyle::NoBrush);
-			rt.setLeft(0);
-			rt.setTop(0);
-			rt.setRight(rtg.right());
-			rt.setBottom(rtg.height());
-			bool last = false;
-			bool first = false;
-			
-			QRect lw_rect = lw->geometry();
-			QRect item_rect = lw->visualItemRect(lvi);
-
-			if (item_rect.top() < item_rect.height())
-				first = true;
-
-			if (item_rect.bottom() + item_rect.height()/2 > lw_rect.height())
-				last = true;
-
-			if (first&&last)
-			{
-				rt.adjust(1, 0, -2, -2);
-			}
-			else
-			{
-				if (first)
-					rt.adjust(1, 0, -2, 0);
-				else if (last)
-					rt.adjust(1, 0, -2, -2);
-				else
-					rt.adjust(1, 1, -2, -1);
-			}
-					
-			QStyleOptionButton option;
-			initStyleOption(&option);
-
-		
-			if (isCheckable())
-			{
-				if (isChecked() || isDown())
-				{
-					if (first || last)
-						painter.setPen(QColor(192, 192, 192, 255));
-					else
-						//painter.setPen(QColor(255, 255, 255, 0));
-						painter.setPen(QColor(192, 192, 192, 255));
-					painter.setBrush(QColor(255, 255, 0, 255));
-					
-				}
-				else if (option.state &QStyle::State_MouseOver)
-				{
-					//rt = style()->subElementRect(QStyle::SubElement::SE_PushButtonContents, &option, this);
-					painter.setPen(QColor(255, 255, 255, 0));
-					painter.setBrush(QColor(255, 255, 0, 64));
-					
-				}
-			}
-			else
-			{
-			if (option.state &QStyle::State_MouseOver)
-			{
-				//rt = style()->subElementRect(QStyle::SubElement::SE_PushButtonContents, &option, this);
-				painter.setPen(QColor(255, 255, 255, 0));
-				painter.setBrush(QColor(255, 255, 0, 64));
-
-			}
-			}
-
-
-			painter.drawRect(rt);
-
-			if (last==false)
-				option.rect.adjust(1, 0, -1, 1);
-			else
-				option.rect.adjust(1, 0, -1, 0);
-			QRect btn_rect = item_rect;
-			btn_rect.setLeft(1);
-			btn_rect.setTop(1);
-		
-			//if (option.state &QStyle::State_MouseOver)
-			{
-				//option.palette.setColor(QPalette::ButtonText, QColor(255, 0, 0,127));
-				
-			}
-			//else
-			{
-				if (isChecked() || isDown())
-				{
-					option.palette.setColor(QPalette::ButtonText, QColor(255, 0, 0));
-				}
-				else
-				{
-					option.palette.setColor(QPalette::ButtonText, QColor(255, 255, 255));
-				}
-			}
-			QStylePainter p(this);
-			style()->drawControl(QStyle::CE_PushButtonLabel, &option, &p, this);
-		}
-		//else
-		{
-			//QPushButton::paintEvent(e);
-		}
-	}
-	else
-	{
-		QPushButton::paintEvent(e);
-	}
-}
+#include <qapplication.h>
 
 ButtonList::ButtonList(QWidget *parent )
     :QListWidget(parent)
 {
-	connect(this, SIGNAL(itemChanged(QListWidgetItem*)), this, SLOT(itemChanged(QListWidgetItem*)));
-	setMouseTracking(true);
-	
+	connect(this, SIGNAL(itemChanged(QListWidgetItem *)), this, SLOT(itemChanged(QListWidgetItem *)));
 }
 
 void ButtonList::itemChanged(QListWidgetItem *item)
@@ -152,7 +16,7 @@ void ButtonList::itemChanged(QListWidgetItem *item)
 	QWidget* w = itemWidget(item);
 	if (w)
 	{
-		ListButton* lb = (ListButton*)w;
+		ItemButton* lb = (ItemButton*)w;
 		if (lb->text() != item->text())
 		{
 			lb->setText(item->text());
@@ -160,82 +24,81 @@ void ButtonList::itemChanged(QListWidgetItem *item)
 	}
 }
 
-ListButton* ButtonList::addButtonItem(const QString& text,bool checkable)
+QListWidgetItem* ButtonList::buttonItem(ItemButton*btn )
 {
-	QListWidgetItem* lvi = new QListWidgetItem;
+	return itemFromIndex(btn->_idx);
+}
+
+ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
+{
+	QListWidgetItem* lwi = itEM;
 	
     int nn = 0;
     int hh = 40;
     setSpacing(nn);
-	addItem(lvi);
-    lvi->setSizeHint(QSize(0, hh));
-	ListButton* btn1 = new ListButton(this);
-	btn1->lvi = lvi;
-	btn1->lw = this;
-	btn1->setCheckable(checkable);
-	btn1->setChecked(false);
-	btn1->setText(text);
-    btn1->setFlat(true);
+	addItem(lwi);
+    lwi->setSizeHint(QSize(0, hh));
+	ItemButton* lb = new ItemButton(this);
 	
-	setItemWidget(lvi, btn1);
-	QRect item_rect = visualItemRect(lvi);
+	lb->_ww = this;
+	lb->setCheckable(checkable);
+	lb->setChecked(false);
+	lb->setFlat(true);
+	
+	setItemWidget(lwi, lb);
+	lb->_idx = indexFromItem(lwi);
+	
+	setMouseTracking(true);
+
+	QRect item_rect = visualItemRect(lwi);
+
+	int row = lb->_idx.row();
+	int col = lb->_idx.column();
+
+
+
+	lb->addjustRectToItem(true, item_rect,count());
+
+	if (row >= 1)
+	{
+		QListWidgetItem*it = item(row - 1);
+		QWidget* wgt = itemWidget(it);
+		if (wgt)
+		{
+			QRect item_rect = visualItemRect(it);
+			ItemButton*ib = (ItemButton*)wgt;
+			ib->addjustRectToItem(true, item_rect,count());
+		}
+	}
+
 	
    // resize(size().width(), item_rect.bottom()+nn+1);
 
-	return btn1;
+	return lb;
 }
 
-void ButtonList::resizeEvent(QResizeEvent *event)
-{
-	QListWidget::resizeEvent(event);
-}
 
 void ButtonList::paintEvent(QPaintEvent *e)
 {
-	
 	//QListWidget::paintEvent(e);
-
 	QPainter painter(viewport());
 	QRect pg1 = geometry();
 	QRect pg(1, 0, pg1.width()-2, pg1.height());
 	//pg.moveTo(-pg.left(), -pg.top());
 	painter.setPen(QColor(0, 0, 0, 0));
-	painter.setBrush(QColor(0,0,0,200));
+	painter.setBrush(QColor(32,85,138,255));
 	painter.drawRect(pg);
 	
 	int last_checked = 0;
+	
 	for (int i = 0; i < count(); i++)
 	{
 		QListWidgetItem* lwi = item(i);
 		QWidget* dw = itemWidget(lwi);
-		ListButton*lb = (ListButton*)dw;
+		ItemButton*lb = (ItemButton*)dw;
 		QRect rt = lb->geometry();
 
-		if (lb->isFlat()) 
-		{
-			if (!lb->isChecked())
-			{
-				//rt.setLeft(0);
-				//rt.setTop(0);
-				//rt.adjust(1, 1, -2, -2);
-
-				//painter.drawRect(rt);
-
-				//painter.drawLine(QLine(p1, p2));
-
-				//QStylePainter p(this);
-				//QStyleOptionButton option;
-				//lb->initStyleOption(&option);
-				//QMenu m;
-				//m.initMen(&option);
-				//option.features &= ~QStyleOptionButton::Flat;
-				//p.setPen(c);
-				//p.setBrush(Qt::BrushStyle::NoBrush);
-				//painter.drawRect(rt);
-				//style()->drawPrimitive(QStyle::PE_FrameGroupBox, &option, &p, this);
-			}
-		}
-		QColor c(0, 0, 64);
+		QColor c(0, 55, 64);
 		painter.setPen(c);
 		painter.setBrush(QColor(100, 160, 0, 64));
 
@@ -278,15 +141,12 @@ void ButtonList::paintEvent(QPaintEvent *e)
 		painter.setBrush(QColor(100, 160, 0, 64));
 		//painter.drawRect(rt);
 		last_checked = lb->isChecked() ? 1 : 0;
-
-	
-	
-
 	}
 }
+#if 0
 bool ButtonList::eventFilter(QObject *object, QEvent *event)
 {
-	if (object->metaObject() == &ListButton::staticMetaObject)
+	if (object->metaObject() == &ItemButton::staticMetaObject)
 	{
 		if (event->type() == QEvent::FocusIn)
 		{
@@ -299,3 +159,4 @@ bool ButtonList::eventFilter(QObject *object, QEvent *event)
 	}
 	return QListWidget::eventFilter(object,event);
 }
+#endif

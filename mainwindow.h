@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidget>
+#include <QTreeWidget>
 namespace Ui {
 class MainWindow;
 }
@@ -23,6 +24,7 @@ private slots:
     void QListWidget_itemEntered(QListWidgetItem *item);
     void QListWidget_itemChanged(QListWidgetItem *item);
     void QListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+	void QTableWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
     void ListButton_toggled(bool);
     void onClose();
     void onMaximize();
