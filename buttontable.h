@@ -12,7 +12,7 @@ public:
     ItemButton* addButtonItem(const QString& text, bool checkable);
     QTreeWidgetItem* buttonItem(ItemButton*btn);
     void paintEvent(QPaintEvent *) override;
-	QModelIndex indexFromItem(QTreeWidgetItem *item);
+	QModelIndex indexFromItem(QTreeWidgetItem *item,  int col);
     private slots:
     void itemChanged(QTreeWidgetItem *item, int column);
 	

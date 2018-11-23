@@ -22,8 +22,44 @@ void ItemButton::leaveEvent(QEvent *event)
 {
 
 }
+void ItemButton::addjustRectToItemH(bool bAddjus, QRect& rect, int col_count)
+{
+	QRect rtg = geometry();
+	QRect rt = rect;
+	rt.setLeft(0);
+	rt.setTop(0);
+	rt.setRight(rtg.right());
+	rt.setBottom(rtg.height());
 
-void ItemButton::addjustRectToItem(bool bAddjust, QRect& rect,int row_count)
+	bool last_item = false;
+	bool first_item = false;
+
+	int row = _idx.row();
+	int col = _idx.column();
+
+	if (col == 0)
+		first_item = true;
+
+	if (col_count == col + 1)
+		last_item = true;
+
+	if (first_item&&last_item)
+	{
+		rt.adjust(2, 1, -1, -1);
+	}
+	else
+	{
+		if (first_item)
+			rt.adjust(1, 1, -1, 1);
+		else if (last_item)
+			rt.adjust(0, 1, -4, -1);
+		else
+			rt.adjust(1, 1, -2, -1);
+	}
+
+	_rect_to_item = rt;
+}
+void ItemButton::addjustRectToItemV(bool bAddjust, QRect& rect,int row_count)
 {
 	QRect rtg = geometry();
 	QRect rt = rect;
@@ -51,11 +87,11 @@ void ItemButton::addjustRectToItem(bool bAddjust, QRect& rect,int row_count)
 	else
 	{
 		if (first_row)
-			rt.adjust(1, 1, -2, 1);
+			rt.adjust(1, 1, -20, 1);
 		else if (last_row)
-			rt.adjust(1, 1, -2, -2);
+			rt.adjust(1, 1, -20, -2);
 		else
-			rt.adjust(1, 1, -2, -1);
+			rt.adjust(1, 1, -20, -1);
 	}
 
 	_rect_to_item = rt;

@@ -17,7 +17,8 @@ public:
     void paintEvent(QPaintEvent *) override;
     void initStyleOption(QStyleOptionButton *option) const;
 
-	void addjustRectToItem(bool bAddjus, QRect& rect, int row_count);
+	void addjustRectToItemV(bool bAddjus, QRect& rect, int row_count);
+	void addjustRectToItemH(bool bAddjus, QRect& rect, int col_count);
     QWidget* _ww;
     QModelIndex _idx;
     QRect _rect_to_item;

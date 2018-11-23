@@ -55,9 +55,7 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 	int row = lb->_idx.row();
 	int col = lb->_idx.column();
 
-
-
-	lb->addjustRectToItem(true, item_rect,count());
+	lb->addjustRectToItemV(true, item_rect,count());
 
 	if (row >= 1)
 	{
@@ -67,7 +65,7 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 		{
 			QRect item_rect = visualItemRect(it);
 			ItemButton*ib = (ItemButton*)wgt;
-			ib->addjustRectToItem(true, item_rect,count());
+			ib->addjustRectToItemV(true, item_rect,count());
 		}
 	}
 

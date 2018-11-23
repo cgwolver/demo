@@ -27,9 +27,9 @@ QTreeWidgetItem* ButtonTable::buttonItem(ItemButton*btn )
 {
     return itemFromIndex(btn->_idx);
 }
-QModelIndex ButtonTable::indexFromItem(QTreeWidgetItem *item)
+QModelIndex ButtonTable::indexFromItem(QTreeWidgetItem *item,int col)
 {
-	return QTreeWidget::indexFromItem(item);
+	return QTreeWidget::indexFromItem(item, col);
 }
 ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 {
@@ -39,10 +39,12 @@ ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 	int ww = 100;
 
 	int column = lwi->columnCount();
+
+	int new_column_count = column + 1;
 	
-	setColumnCount(column + 1);
+	setColumnCount(new_column_count);
 	setColumnWidth(column, ww);
-	resize((ww+2)* (column+1), hh + 2);
+	resize((ww)* (new_column_count), hh);
   
 	lwi->setSizeHint(column,QSize(ww, hh));
     ItemButton* lb = new ItemButton(this);
@@ -58,18 +60,36 @@ ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 
     setItemWidget(lwi, column, lb);
 	
-    lb->_idx = indexFromItem(lwi);
+	lb->_idx = indexFromItem(lwi, column);
 
     setMouseTracking(true);
 
-    QRect rtg = lb->geometry();
-    QRect rt;
-    rt.setLeft(0);
-    rt.setTop(0);
-    rt.setRight(rtg.right());
-    rt.setBottom(rtg.height());
+	QRect item_rect = visualRect(lb->_idx);// lb->geometry();
 
-    lb->_rect_to_item = rt;
+	int row = lb->_idx.row();
+	int col = lb->_idx.column();
+
+	lb->addjustRectToItemH(true, item_rect, new_column_count);
+
+	if (col >= 1)
+	{
+		QWidget* wgt = itemWidget(lwi, column);
+		if (wgt)
+		{
+			ItemButton*ib = (ItemButton*)wgt;
+			QRect item_rect = visualRect(ib->_idx);	
+			ib->addjustRectToItemH(true, item_rect, new_column_count);
+		}
+	}
+
+    //QRect rt;
+
+   // rt.setLeft(0);
+   // rt.setTop(1);
+   // rt.setRight(rtg.width()-1);
+   // rt.setBottom(rtg.height());
+
+   // lb->_rect_to_item = rt;
 	lwi->setText(column, text);
 
     return lb;
@@ -79,13 +99,14 @@ ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 void ButtonTable::paintEvent(QPaintEvent *e)
 {
     //QTreeWidget::paintEvent(e);
-    QPainter painter(this);
+    QPainter painter(viewport());
     QRect pg1 = geometry();
-    QRect pg(1, 0, pg1.width()-2, pg1.height());
+    QRect pg(1, 0, pg1.width()-2, pg1.height()-1);
     //pg.moveTo(-pg.left(), -pg.top());
-    painter.setPen(QColor(0, 0, 0, 0));
-    painter.setBrush(QColor(0,0,0,200));
+    painter.setPen(QColor(0, 0, 0, 255));
+    painter.setBrush(QColor(0,64,35,200));
     painter.drawRect(pg);
+
 #if 0
     int last_checked = 0;
 
