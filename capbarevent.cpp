@@ -20,3 +20,12 @@ void CapBarEvent::onMini()
 {
      emit minimize();
 }
+
+void CapBarEvent::onDbClicked()
+{
+    emit dbclicked();
+}
+void CapBarEvent::onClicked()
+{
+    emit sgclicked();
+}

@@ -23,6 +23,7 @@ Item {
             visible: true
             border.color: "#00000000"
 
+
             Image {
                 id: image_close
                 x: 10
@@ -55,8 +56,8 @@ Item {
         }
         Image {
             id: logo
-            x: 1
-            y: 2
+            x: 0
+            y: 0
             width: 235
             height: 36
             source: "res/logo.png"
