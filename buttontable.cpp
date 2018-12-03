@@ -44,7 +44,7 @@ ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 	
 	setColumnCount(new_column_count);
 	setColumnWidth(column, ww);
-	resize((ww)* (new_column_count), hh);
+	resize((ww)* (new_column_count), hh+1);
   
 	lwi->setSizeHint(column,QSize(ww, hh));
     ItemButton* lb = new ItemButton(this);
