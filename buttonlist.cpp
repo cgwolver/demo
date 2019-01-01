@@ -87,7 +87,7 @@ void ButtonList::paintEvent(QPaintEvent *e)
 	painter.setPen(QColor(64, 64, 64, 128));
 	//painter.setBrush(QColor(32,85,138,255));
 	painter.setBrush(QColor(64, 64, 64, 128));
-	painter.fillRect(pg, QColor(64, 64, 64, 128));
+    painter.fillRect(pg, QColor(64, 64, 164, 128));
 	
 	int last_checked = 0;
 	
