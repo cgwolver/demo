@@ -130,5 +130,8 @@
     <None Include="res\mini.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="test.qml">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -35,8 +35,8 @@ ItemButton* ButtonTable::addButtonItem(const QString& text, bool checkable)
 {
     QTreeWidgetItem* lwi = topLevelItem(0);
 	
-    int hh = 40;
-	int ww = 100;
+    int hh = 50;
+	int ww = 160;
 
 	int column = lwi->columnCount();
 
@@ -104,7 +104,7 @@ void ButtonTable::paintEvent(QPaintEvent *e)
     QRect pg(1, 0, pg1.width()-2, pg1.height()-1);
     //pg.moveTo(-pg.left(), -pg.top());
     painter.setPen(QColor(0, 0, 0, 255));
-    painter.setBrush(QColor(0,64,35,200));
+	painter.setBrush(QColor(64, 64, 64, 255));
     painter.drawRect(pg);
 
 #if 0

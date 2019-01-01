@@ -20,12 +20,14 @@ public:
 	void mouseReleaseEvent(QMouseEvent *event) override;
 	void mousePressEvent(QMouseEvent *event) override;
 	void mouseMoveEvent(QMouseEvent *event) override;
-	void resizeEvent(QResizeEvent *event)override;
+    void resizeEvent(QResizeEvent *event)override;
+    void paintEvent(QPaintEvent *e)override;
 	QRect childWindowRect(QWidget*child);
 private slots:
     void QListWidget_itemEntered(QListWidgetItem *item);
     void QListWidget_itemChanged(QListWidgetItem *item);
     void QListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+	void QListWidget_2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 	void QTableWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
     void ListButton_toggled(bool);
     void onClose();
@@ -35,6 +37,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
 	QPoint _mousePt;
+
+	int _moveState;
+	QPoint _movePt;
 };
 
 #endif // MAINWINDOW_H

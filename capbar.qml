@@ -4,30 +4,35 @@ import qt.capbar.event 1.0
 Item {
     objectName: "rootObject"
     width: 640
-    height: 36
+    height: 50
+    visible: true
     Rectangle {
         objectName: "rectObject"
         id: rectangle
-        color: "#4d4d4d"
+        height: 50
+        color: "#ffffff"
         anchors.fill: parent
 
         Rectangle {
             id: close_bk
             x: 590
-            y: 0
-            width: 36
-            height: 36
+            width: 50
+            height: 50
             color: "#00000000"
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+            anchors.top: parent.top
+            anchors.topMargin: 0
             anchors.right: parent.right
-            anchors.rightMargin: 14
+            anchors.rightMargin: 2
             visible: true
             border.color: "#00000000"
 
 
             Image {
                 id: image_close
-                x: 10
-                y: 10
+                x: 18
+                y: 18
                 width: 16
                 height: 16
                 source: "res/close.png"
@@ -35,9 +40,9 @@ Item {
                 MouseArea {
                     id: mouseArea_close
                     x: -10
-                    y: -9
+                    y: -18
                     width: 36
-                    height: 36
+                    height: 50
                     hoverEnabled: true
                     onEntered:
                     {
@@ -59,31 +64,35 @@ Item {
             x: 0
             y: 0
             width: 235
-            height: 36
+            height: 60
+            visible: false
             source: "res/logo.png"
         }
 
         Rectangle {
             id: max_bk
             x: 549
-            y: 0
-            width: 36
-            height: 36
+            width: 50
+            height: 50
             color: "#00000000"
-            anchors.right: parent.right
-            anchors.rightMargin: 55
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+            anchors.top: parent.top
+            anchors.topMargin: 0
+            anchors.right: close_bk.left
+            anchors.rightMargin: 0
             Image {
                 id: image_maxi
-                x: 10
-                y: 10
+                x: 18
+                y: 18
                 width: 16
                 height: 16
                 MouseArea {
                     id: mouseArea_maxi
                     x: -10
-                    y: -10
+                    y: -18
                     width: 36
-                    height: 36
+                    height: 50
                     hoverEnabled: true
                     onEntered:
                     {
@@ -107,24 +116,26 @@ Item {
         Rectangle {
             id: mini_bk
             x: 508
-            y: 0
-            width: 36
-            height: 36
+            width: 50
             color: "#00000000"
-            anchors.right: parent.right
-            anchors.rightMargin: 96
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+            anchors.top: parent.top
+            anchors.topMargin: 0
+            anchors.right: max_bk.left
+            anchors.rightMargin: 0
             Image {
                 id: image_mini
-                x: 10
-                y: 9
+                x: 18
+                y: 18
                 width: 16
                 height: 16
                 MouseArea {
                     id: mouseArea_mini
                     x: -10
-                    y: -9
+                    y: -18
                     width: 36
-                    height: 36
+                    height: 50
                     hoverEnabled: true
                     onEntered:
                     {
@@ -147,10 +158,57 @@ Item {
         }
     }
 
+
     CapbarEvent {
         id:capEvent
         objectName: "capEventObject"
 
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*##^## Designer {
+    D{i:2;anchors_height:60;anchors_width:36;anchors_x:590;anchors_y:0}D{i:9;anchors_height:60;anchors_y:0}
+}
+ ##^##*/

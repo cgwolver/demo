@@ -34,7 +34,7 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 	QListWidgetItem* lwi = itEM;
 	
     int nn = 0;
-    int hh = 40;
+    int hh = 50;
     setSpacing(nn);
 	addItem(lwi);
     lwi->setSizeHint(QSize(0, hh));
@@ -70,22 +70,24 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 	}
 
 	
-   // resize(size().width(), item_rect.bottom()+nn+1);
+    //resize(size().width(), item_rect.bottom()+nn+1);
 
 	return lb;
 }
 
+#define DRAW_ITEM_FRAME 0
 
 void ButtonList::paintEvent(QPaintEvent *e)
 {
 	//QListWidget::paintEvent(e);
 	QPainter painter(viewport());
 	QRect pg1 = geometry();
-	QRect pg(1, 0, pg1.width()-2, pg1.height());
+	QRect pg(0, 0, pg1.width(), pg1.height());
 	//pg.moveTo(-pg.left(), -pg.top());
-	painter.setPen(QColor(0, 0, 0, 0));
-	painter.setBrush(QColor(32,85,138,255));
-	painter.drawRect(pg);
+	painter.setPen(QColor(64, 64, 64, 128));
+	//painter.setBrush(QColor(32,85,138,255));
+	painter.setBrush(QColor(64, 64, 64, 128));
+	painter.fillRect(pg, QColor(64, 64, 64, 128));
 	
 	int last_checked = 0;
 	
@@ -102,6 +104,7 @@ void ButtonList::paintEvent(QPaintEvent *e)
 
 		if (lb->isFlat())
 		{
+#if DRAW_ITEM_FRAME
 			//if (!lb->isChecked())
 			{
 				rt.adjust(1, 0, -1, 0);
@@ -133,10 +136,12 @@ void ButtonList::paintEvent(QPaintEvent *e)
 				QPoint p5(rt.right(), rt.top()), p6(rt.right(), rt.bottom());
 				painter.drawLine(QLine(p5, p6));
 			}
+#endif
 		}
 		
 		painter.setPen(QColor(0,0,0,0));
 		painter.setBrush(QColor(100, 160, 0, 64));
+		
 		//painter.drawRect(rt);
 		last_checked = lb->isChecked() ? 1 : 0;
 	}

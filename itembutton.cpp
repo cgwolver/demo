@@ -118,24 +118,28 @@ void ItemButton::paintEvent(QPaintEvent *e)
             {
                 if (lb->isChecked() || lb->isDown())
                 {
-                    painter.setBrush(QColor(113, 205, 157, 255));
+                    painter.setBrush(QColor(34, 87, 128, 255));
 
                 }
                 else if (option.state &QStyle::State_MouseOver)
                 {
                     //rt = style()->subElementRect(QStyle::SubElement::SE_PushButtonContents, &option, this);
                     painter.setPen(QColor(255, 255, 255, 0));
-                    painter.setBrush(QColor(113, 205, 157, 64));
+                    painter.setBrush(QColor(34, 87, 128, 128));
 
                 }
             }
             else
             {
-                if (option.state &QStyle::State_MouseOver)
+				if (lb->isDown())
+				{
+					painter.setBrush(QColor(34, 87, 128, 255));
+				}
+				else if (option.state &QStyle::State_MouseOver)
                 {
                     //rt = style()->subElementRect(QStyle::SubElement::SE_PushButtonContents, &option, this);
                     painter.setPen(QColor(255, 255, 255, 0));
-                    painter.setBrush(QColor(255, 255, 0, 64));
+                    painter.setBrush(QColor(34, 87, 128, 64));
                 }
             }
 
@@ -151,7 +155,7 @@ void ItemButton::paintEvent(QPaintEvent *e)
             {
                 if (lb->isChecked() || lb->isDown())
                 {
-                    option.palette.setColor(QPalette::ButtonText, QColor(255, 0, 0));
+                    option.palette.setColor(QPalette::ButtonText, QColor(255, 255, 255));
                 }
                 else
                 {
