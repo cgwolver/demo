@@ -44,6 +44,7 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 	lb->setCheckable(checkable);
 	lb->setChecked(false);
 	lb->setFlat(true);
+    lb->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
 	
 	setItemWidget(lwi, lb);
 	lb->_idx = indexFromItem(lwi);
