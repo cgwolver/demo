@@ -18,6 +18,7 @@ public:
 	void paintEvent(QPaintEvent *) override;
 private slots:
 	void itemChanged(QListWidgetItem *item);
+    void itemToggled(ItemButton*btn,bool checked);
 };
 
 

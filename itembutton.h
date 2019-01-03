@@ -22,6 +22,10 @@ public:
     QWidget* _ww;
     QModelIndex _idx;
     QRect _rect_to_item;
+ signals:
+    void toggleSignal(ItemButton*btn,bool checked);
+private slots:
+    void onToggled(bool checked);
 };
 
 #endif // ITEMBUTTON_H

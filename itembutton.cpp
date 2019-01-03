@@ -5,6 +5,7 @@
 ItemButton::ItemButton(const QString &text, QWidget *parent)
     : QPushButton(text, parent)
 {
+    connect(this,SIGNAL(toggled(bool)),this,SLOT(onToggled(bool)));
 }
 
 void ItemButton::initStyleOption(QStyleOptionButton *option) const
@@ -12,7 +13,7 @@ void ItemButton::initStyleOption(QStyleOptionButton *option) const
     QPushButton::initStyleOption(option);
 }
 
-void  ItemButton::ItemButton::enterEvent(QEvent *event)
+void  ItemButton::enterEvent(QEvent *event)
 {
     //QListWidget*list = dynamic_cast<QListWidget*>(parent());
     //lw->itemEntered(lvi);
@@ -22,6 +23,12 @@ void ItemButton::leaveEvent(QEvent *event)
 {
 
 }
+
+void ItemButton::onToggled(bool checked)
+{
+    emit toggleSignal(this,checked);
+}
+
 void ItemButton::addjustRectToItemH(bool bAddjus, QRect& rect, int col_count)
 {
 	//QRect rtg = geometry();

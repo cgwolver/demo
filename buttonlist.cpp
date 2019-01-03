@@ -24,6 +24,14 @@ void ButtonList::itemChanged(QListWidgetItem *item)
 	}
 }
 
+void ButtonList::itemToggled(ItemButton*btn,bool checked)
+{
+    if(this->currentIndex()!=btn->_idx)
+    {
+        this->setCurrentIndex(btn->_idx);
+    }
+}
+
 QListWidgetItem* ButtonList::buttonItem(ItemButton*btn )
 {
 	return itemFromIndex(btn->_idx);
@@ -39,12 +47,15 @@ ItemButton* ButtonList::addButtonItem( QListWidgetItem*itEM,bool checkable)
 	addItem(lwi);
     lwi->setSizeHint(QSize(0, hh));
 	ItemButton* lb = new ItemButton(this);
-	
+#if QT_VERSION < QT_VERSION_CHECK(5,10,0)
+    connect(lb,SIGNAL(toggleSignal(ItemButton*,bool)),this,SLOT(itemToggled(ItemButton*,bool)));
+#endif
+
 	lb->_ww = this;
 	lb->setCheckable(checkable);
 	lb->setChecked(false);
 	lb->setFlat(true);
-    lb->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
+    //lb->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
 	
 	setItemWidget(lwi, lb);
 	lb->_idx = indexFromItem(lwi);
