@@ -26,8 +26,8 @@ public:
 private slots:
     void QListWidget_itemEntered(QListWidgetItem *item);
     void QListWidget_itemChanged(QListWidgetItem *item);
-    void QListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
-	void QListWidget_2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void QListWidget1_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void QListWidget2_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 	void QTableWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
     void ListButton_toggled(bool);
     void onClose();

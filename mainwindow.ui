@@ -14,7 +14,7 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="ButtonList" name="listWidget">
+   <widget class="ButtonList" name="listWidget2">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -52,6 +52,9 @@
     </property>
     <property name="isWrapping" stdset="0">
      <bool>false</bool>
+    </property>
+    <property name="resizeMode">
+     <enum>QListView::Adjust</enum>
     </property>
     <property name="layoutMode">
      <enum>QListView::SinglePass</enum>
@@ -165,7 +168,7 @@ font: 75 14pt &quot;Microsoft YaHei UI&quot;;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="ButtonList" name="listWidget_2">
+   <widget class="ButtonList" name="listWidget1">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -235,12 +238,12 @@ font: 75 14pt &quot;Microsoft YaHei UI&quot;;</string>
     </property>
    </widget>
    <zorder>frame</zorder>
-   <zorder>listWidget</zorder>
+   <zorder>listWidget2</zorder>
    <zorder>capBar</zorder>
    <zorder>tableWidget</zorder>
    <zorder>quickWidget</zorder>
    <zorder>label</zorder>
-   <zorder>listWidget_2</zorder>
+   <zorder>listWidget1</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -264,7 +267,7 @@ font: 75 14pt &quot;Microsoft YaHei UI&quot;;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>listWidget</sender>
+   <sender>listWidget2</sender>
    <signal>itemChanged(QListWidgetItem*)</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
