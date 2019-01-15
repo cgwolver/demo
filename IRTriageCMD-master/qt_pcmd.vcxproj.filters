@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pcmd\alias.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\assoc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\attrib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\batch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\beep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\call.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\chcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\choice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\cls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\cmd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\cmddbg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\cmdinput.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\cmdtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\color.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\console.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\copy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\date.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\del.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\delay.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\dir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\dirstack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\echo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\filecomp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\for.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\free.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\goto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\history.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\if.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\internal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\label.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\locale.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\mklink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\move.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\msgbox.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\path.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\pause.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\precomp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\prompt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qt_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\redir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\ren.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\replace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\screen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\set.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\setlocal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\shift.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\start.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\strtoclr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\timer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\title.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\type.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\ver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\verify.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\vol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\where.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcmd\window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
