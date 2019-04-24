@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Projects\demo\libqrencode-master\vs2017\CMakeFiles\5e654bf453bb2e1f9af4bced36c6ec2e\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A41B2F86-776B-309C-9877-09F189DF6A41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

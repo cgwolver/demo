@@ -1,0 +1,14 @@
+﻿  Building Custom Rule E:/Projects/demo/libqrencode-master/CMakeLists.txt
+  CMake does not need to re-run because E:/Projects/demo/libqrencode-master/vs2017/CMakeFiles/generate.stamp is up-to-date.
+cl : 命令行 warning D9002: 忽略未知选项“-pg”
+  qrencode.c
+  qrinput.c
+  bitstream.c
+  qrspec.c
+  rsecc.c
+  split.c
+  mask.c
+  mqrspec.c
+  mmask.c
+  正在生成代码...
+  qrencode.vcxproj -> E:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib

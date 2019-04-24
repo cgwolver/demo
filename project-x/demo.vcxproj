@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{34A7069B-FCB3-3F9C-B6E5-A88A0A5A7428}</ProjectGuid>
-    <RootNamespace>untitled20</RootNamespace>
+    <ProjectGuid>{906B7ECC-F26A-39A2-927C-4C9CE31FDB31}</ProjectGuid>
+    <RootNamespace>996icu</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
@@ -25,7 +25,7 @@
     <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>Application</ConfigurationType>
     <IntermediateDirectory>release\</IntermediateDirectory>
-    <PrimaryOutput>untitled20</PrimaryOutput>
+    <PrimaryOutput>996icu</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
@@ -34,7 +34,7 @@
     <CharacterSet>NotSet</CharacterSet>
     <ConfigurationType>Application</ConfigurationType>
     <IntermediateDirectory>debug\</IntermediateDirectory>
-    <PrimaryOutput>untitled20</PrimaryOutput>
+    <PrimaryOutput>996icu</PrimaryOutput>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
@@ -57,17 +57,17 @@
   <PropertyGroup>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">untitled20</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">996icu</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">untitled20</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">996icu</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;release;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\libqrencode-master;$(QTDIR)\include;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;release;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -86,14 +86,14 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;shell32.lib;$(QTDIR)\lib\Qt5QuickWidgets.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Quick.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Qml.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;shell32.lib;E:\Projects\demo\libqrencode-master\vs2017\Release\qrencode.lib;$(QTDIR)\lib\Qt5QuickWidgets.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Quick.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Qml.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\openssl\lib;C:\Utils\my_sql\my_sql\lib;C:\Utils\postgresql\pgsql\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkIncremental>false</LinkIncremental>
-      <OutputFile>$(OutDir)\untitled20.exe</OutputFile>
+      <OutputFile>$(OutDir)\996icu.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -115,7 +115,7 @@
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <InputFile>%(FullPath)</InputFile>
       <DynamicSource>output</DynamicSource>
-      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(QTDIR)\mkspecs/win32-msvc;.;$(QTDIR)\include;$(QTDIR)\include/QtQuickWidgets;$(QTDIR)\include/QtWidgets;$(QTDIR)\include/QtQuick;$(QTDIR)\include/QtGui;$(QTDIR)\include/QtANGLE;$(QTDIR)\include/QtQml;$(QTDIR)\include/QtNetwork;$(QTDIR)\include/QtCore;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\ATLMFC\include;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt</IncludePath>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(QTDIR)\mkspecs/win32-msvc;.;E:/Projects/demo/libqrencode-master;$(QTDIR)\include;$(QTDIR)\include/QtQuickWidgets;$(QTDIR)\include/QtWidgets;$(QTDIR)\include/QtQuick;$(QTDIR)\include/QtGui;$(QTDIR)\include/QtANGLE;$(QTDIR)\include/QtQml;$(QTDIR)\include/QtNetwork;$(QTDIR)\include/QtCore;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\ATLMFC\include;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt</IncludePath>
     </QtMoc>
     <QtRcc>
       <InitFuncName>appres</InitFuncName>
@@ -134,7 +134,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;debug;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\libqrencode-master;$(QTDIR)\include;$(QTDIR)\include\QtQuickWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;debug;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -153,13 +153,13 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmaind.lib;shell32.lib;$(QTDIR)\lib\Qt5QuickWidgetsd.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Quickd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Qmld.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(QTDIR)\lib\qtmaind.lib;shell32.lib;E:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib;$(QTDIR)\lib\Qt5QuickWidgetsd.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Quickd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Qmld.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\openssl\lib;C:\Utils\my_sql\my_sql\lib;C:\Utils\postgresql\pgsql\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
-      <OutputFile>$(OutDir)\untitled20.exe</OutputFile>
+      <OutputFile>$(OutDir)\996icu.exe</OutputFile>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -189,7 +189,7 @@
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <InputFile>%(FullPath)</InputFile>
       <DynamicSource>output</DynamicSource>
-      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(QTDIR)\mkspecs/win32-msvc;.;$(QTDIR)\include;$(QTDIR)\include/QtQuickWidgets;$(QTDIR)\include/QtWidgets;$(QTDIR)\include/QtQuick;$(QTDIR)\include/QtGui;$(QTDIR)\include/QtANGLE;$(QTDIR)\include/QtQml;$(QTDIR)\include/QtNetwork;$(QTDIR)\include/QtCore;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\ATLMFC\include;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt</IncludePath>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(QTDIR)\mkspecs/win32-msvc;.;E:/Projects/demo/libqrencode-master;$(QTDIR)\include;$(QTDIR)\include/QtQuickWidgets;$(QTDIR)\include/QtWidgets;$(QTDIR)\include/QtQuick;$(QTDIR)\include/QtGui;$(QTDIR)\include/QtANGLE;$(QTDIR)\include/QtQml;$(QTDIR)\include/QtNetwork;$(QTDIR)\include/QtCore;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\ATLMFC\include;D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.10.25017\include;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt</IncludePath>
     </QtMoc>
     <QtUic>
       <QTDIR>$(QTDIR)</QTDIR>
