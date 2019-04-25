@@ -22,16 +22,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += D:\Projects\demo\libqrencode-master \
-                D:\Projects\demo\cpuid
+INCLUDEPATH += E:\Projects\demo\libqrencode-master \
 
 CONFIG(debug,debug|release){
-    LIBS += D:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib \
-        D:\Projects\demo\cpuid\x64\Debug\cpuid.lib
+    LIBS += E:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib \
 }
 else{
-    LIBS += D:\Projects\demo\libqrencode-master\vs2017\Release\qrencode.lib \
-        D:\Projects\demo\cpuid\x64\Debug\cpuid.lib
+    LIBS += E:\Projects\demo\libqrencode-master\vs2017\Release\qrencode.lib \
 }
 
 SOURCES += \
