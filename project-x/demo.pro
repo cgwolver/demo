@@ -22,13 +22,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += E:\Projects\demo\libqrencode-master
+INCLUDEPATH += D:\Projects\demo\libqrencode-master \
+                D:\Projects\demo\cpuid
 
 CONFIG(debug,debug|release){
-    LIBS += E:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib
+    LIBS += D:\Projects\demo\libqrencode-master\vs2017\Debug\qrencoded.lib \
+        D:\Projects\demo\cpuid\x64\Debug\cpuid.lib
 }
 else{
-    LIBS += E:\Projects\demo\libqrencode-master\vs2017\Release\qrencode.lib
+    LIBS += D:\Projects\demo\libqrencode-master\vs2017\Release\qrencode.lib \
+        D:\Projects\demo\cpuid\x64\Debug\cpuid.lib
 }
 
 SOURCES += \
@@ -37,14 +40,17 @@ SOURCES += \
     buttonlist.cpp \
     capbarevent.cpp \
     itembutton.cpp \
-    buttontable.cpp
+    buttontable.cpp \
+    picturebox.cpp
 
 HEADERS += \
+    cpuid.h \
         mainwindow.h \
     buttonlist.h \
     capbarevent.h \
     itembutton.h \
-    buttontable.h
+    buttontable.h \
+    picturebox.h
 
 FORMS += \
         mainwindow.ui
